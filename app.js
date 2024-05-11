@@ -1,29 +1,15 @@
-const form = document.getElementById("todo-form");
+const createForm = document.getElementById("todo-form");
 const table = document.querySelector(".table");
-const inputValue = document.querySelector("#task-input");
-const taskDelete = document.querySelector('.task-delete')
+const taskDelete = document.querySelector(".task-delete");
 const time = new Date();
 
-const data = [
-  {
-    id: 1,
-    title: "Create New Things",
-    date: "22:00",
-  },
-  {
-    id: 2,
-    title: "Create New Things",
-    date: "22:00",
-  },
-  {
-    id: 3,
-    title: "Create New Things",
-    date: "22:00",
-  },
-];
+let storageData = JSON.parse(localStorage.getItem("data"))
+  ? JSON.parse(localStorage.getItem("data"))
+  : [];
 
-const storageData = JSON.parse(localStorage.getItem("data")) ? JSON.parse(localStorage.getItem("data")) :[]
-console.log(storageData)
+function setTodos() {
+  localStorage.setItem("data", JSON.stringify(storageData));
+}
 
 storageData.map((item) => {
   table.innerHTML += `
@@ -36,20 +22,29 @@ storageData.map((item) => {
         </div>
  `;
 });
-
+// localStorage.clear()
 // adding task function
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const date = `${time.getHours()}:${time.getMinutes()}`;
-    let id = data.length + 1;
-    data.push({
+createForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const taskInput = createForm["task-input"].value.trim();
+  const date = `${time.getHours()}:${time.getMinutes()}`;
+  let id = storageData.length + 1;
+  console.log(typeof taskInput)
+  if (taskInput.length > 0) {
+    let object = {
       id: id,
-      title: `${inputValue.value}`,
+      title: taskInput,
       date: `${date}`,
-    });
-  });
-  
-// deleting task function
-taskDelete.addEventListener('click',() => {
-    console.log('function worked')
-})
+      completed: false,
+    };
+    storageData.push(object);
+    setTodos();
+    window.location.reload();
+
+  }
+});
+
+// // deleting task function
+// taskDelete.addEventListener("click", () => {
+//   console.log("function worked");
+// });
