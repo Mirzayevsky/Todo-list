@@ -8,17 +8,124 @@
 body{
     height: 100dvh;
     background-color: lightgray;
+    font-family: "Ubuntu Sans", sans-serif;
+    font-variation-settings:
+    "wdth" 100;
 }
 
 .container{
     width: 1200px;
     max-width: 1200px;
     height: fit-content;
-
+    margin: auto;
 }
+@media screen and (max-width:400px) {
+    .container{
+        width: 90%;
+    }
+}
+
 .container .title{
     font-size: 32px;
     font-weight: 700;
-    font-family: normal;
     text-align: center;
+    margin-top: 100px;
+
+}
+#todo-form{
+    margin-top: 30px;
+
+}
+.form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-wrapper{
+    width: 300px;
+    height: 35px;
+}
+@media screen and (max-width:400px) {
+    .input-wrapper{
+        width: 260px;
+    }
+}
+.input-wrapper #task-input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    padding: 0 10px;
+    font-size: 16px;
+}
+.form-container #add-btn{
+    height: 35px;
+    padding: 0 30px;
+    outline: none;
+    border: none;
+    background-color: rgb(9, 185, 9);
+    font-size: 16px;
+    border-radius: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+ #add-btn:hover{
+    box-shadow: 3px 3px 12px gray;
+}
+#task-input:focus{
+    box-shadow: 3px 3px 12px gray;
+}
+.table{
+    width: fit-content;
+    margin: 30px auto;
+    background-color: lightblue;
+    padding: 20px;
+    border-radius: 15px;
+}
+.container .table .table-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    padding:15px 15px ;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.container .table-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    background-color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+
+}
+.container .table-bottom .task-edit{
+    background-color: rgb(12, 236, 31);
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+}
+.container .table-bottom .task-edit:hover{
+    box-shadow:1px 1px 6px rgb(83, 82, 82);
+    background-color: rgba(12, 236, 31, 0.849);
+}
+.container .table-bottom .task-delete{
+    background-color: rgb(233, 21, 6);
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+
+}
+.container .table-bottom .task-delete:hover{
+    background-color: rgb(233, 21, 6);
+    box-shadow:1px 1px 6px rgb(83, 82, 82);
 }
