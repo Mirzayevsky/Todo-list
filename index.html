@@ -15,24 +15,41 @@
 </head>
 
 <body>
+
     <div class="container">
+       <div class="overlay hidden" >
+        <form action="" id="modal">
+            <button id="modal-close">X</button>
+            <p>Edit Your Task</p>
+<div class="input-modal-wrapper">
+    <input type="text" id="modal-input"/>
+            <button id="modal-btn">edit</button>
+</div>
+            
+        </form>
+       </div>
+        
         <h1 class="title">Todo List</h1>
         <form  id="todo-form">
             <div class="form-container">
                 <div class="input-wrapper">
-                    <input type="text" placeholder="Enter Your Task" id="task-input">
+                    <input type="text" placeholder="Enter your task" id="task-input">
                 </div>
                 <button id="add-btn">Add</button>
             </div>
         </form>
-        <div  class="table">
+
+        <div class="table-header" >
             <div class="table-top">
-            <p class="table-Id">ID</p>
-            <p class="Task-title">Title</p>
-            <p class="task-date">Date</p>
-            <p class="task-date">Edit</p>
-            <p class="task-delete">Delete</p>
+                <p class="table-Id">ID</p>
+                <p class="Task-title">Title</p>
+                <p class="task-date">Date</p>
+                <div class="action-wrapper">
+                    <img src="./assets/icons/8666681_edit_icon.svg" class="task-edit-btn"/>
+                <img src="./assets/icons/185090_delete_garbage_icon.svg" class="task-delete-btn"/>
+                </div>
             </div>
+            <div class="table"></div>
         </div>
     </div>
     <script src="app.js"></script>

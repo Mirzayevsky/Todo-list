@@ -7,7 +7,7 @@
 }
 body{
     height: 100dvh;
-    background-color: lightgray;
+    background-color: rgb(255, 255, 255);
     font-family: "Ubuntu Sans", sans-serif;
     font-variation-settings:
     "wdth" 100;
@@ -58,6 +58,7 @@ body{
     border-radius: 3px;
     padding: 0 10px;
     font-size: 16px;
+    background-color: rgb(240, 240, 240);
 }
 .form-container #add-btn{
     height: 35px;
@@ -76,56 +77,111 @@ body{
 #task-input:focus{
     box-shadow: 3px 3px 12px gray;
 }
-.table{
+.table-header{
     width: fit-content;
     margin: 30px auto;
     background-color: lightblue;
     padding: 20px;
     border-radius: 15px;
 }
-.container .table .table-top{
+.container  .table-top{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 400px;
+    width: 380px;
     padding:15px 15px ;
     border-radius: 5px;
     background-color: #fff;
+}
+.container  .table-top .action-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.action-wrapper .task-delete-btn{
+    margin-left: 10px;
 }
 .container .table-bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 380px;
     margin: 10px 0;
     background-color: #fff;
     padding: 8px 15px;
     border-radius: 5px;
 
 }
-.container .table-bottom .task-edit{
-    background-color: rgb(12, 236, 31);
-    padding: 8px;
-    font-size: 14px;
-    border-radius: 4px;
-    font-weight: 500;
-    color: #fff;
-    cursor: pointer;
-}
-.container .table-bottom .task-edit:hover{
-    box-shadow:1px 1px 6px rgb(83, 82, 82);
-    background-color: rgba(12, 236, 31, 0.849);
-}
-.container .table-bottom .task-delete{
-    background-color: rgb(233, 21, 6);
-    padding: 8px;
-    font-size: 14px;
-    border-radius: 4px;
-    font-weight: 500;
-    color: #fff;
-    cursor: pointer;
 
+.container .table-bottom .action-wrapper{
+    display: flex;
+    align-items: center;
 }
-.container .table-bottom .task-delete:hover{
-    background-color: rgb(233, 21, 6);
-    box-shadow:1px 1px 6px rgb(83, 82, 82);
+.container img {
+    height: 30px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.container .table-bottom .task-edit-btn:hover{
+    cursor: pointer;
+}
+
+.container .table-bottom .task-delete-btn:hover{
+    cursor: pointer;
+}
+#modal{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    width: fit-content;
+    height: fit-content;
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #22222277;
+    position:fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-modal-wrapper{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+#modal-input{
+    height: 30px;
+    width: 260px;
+}
+#modal-btn{
+outline: none;
+border: none;
+background-color: rgb(12, 145, 12);
+font-size: 16px;
+padding: 6px 10px;
+border-radius: 5px;
+margin-left: 10px;
+}
+.hidden{
+    display: none;
+}
+#modal{
+    position: relative;
+}
+#modal-close{
+    outline: none;
+    border: none;
+    color: red;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: lightblue;
+    font-size: 16px;
+    padding: 5px 8px;
+    border-radius: 4px;
+    cursor: pointer;
 }
